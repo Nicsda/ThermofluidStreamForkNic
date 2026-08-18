@@ -42,7 +42,7 @@ initial equation
 equation
   V_ref =xLength*yLength*zLength;
 
-  assert(noEvent((Modelica.Math.Vectors.length(normAcc)>0.99 and Modelica.Math.Vectors.length(normAcc)<1.01)),"In \"" + instanceName + "\": Acceleration vector is not normalized",level = AssertionLevel.error);
+  assert(noEvent(Modelica.Math.Vectors.length(normAcc)>0.99 and Modelica.Math.Vectors.length(normAcc)<1.01),"In \"" + instanceName + "\": Acceleration vector is not normalized",level = AssertionLevel.error);
   assert(noEvent(-eps_geometry <= normAcc[2] and normAcc[2] <= eps_geometry),"In \"" + instanceName + "\": Acceleration in y-direction not supported by tankCuboid",level=AssertionLevel.warning);
   assert(noEvent(V_liquid<=V_ref),"In \"" + instanceName + "\": Trying to fit more liquid into tank than it holds",level=AssertionLevel.warning);
 
